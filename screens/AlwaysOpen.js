@@ -12,6 +12,7 @@ import { Modalize } from "react-native-modalize";
 import { Button } from "../components/button/Button";
 
 import tw from "twrnc";
+import { TapGestureHandler } from "react-native-gesture-handler";
 export const AlwaysOpen = () => {
   const modalizeRef = useRef(null);
 
@@ -80,15 +81,21 @@ export const AlwaysOpen = () => {
 
   return (
     <Modalize
+      // withReactModal={true}
       ref={modalizeRef}
       modalStyle={s.content__modal}
       // modalStyle={tw`shadow-black shadow-xl`}
       alwaysOpen={150}
       modalHeight={windowHeight - 150}
       handlePosition="inside"
+      // panGestureEnabled={true}
+      nestedScrollEnabled={true}
       scrollViewProps={{
         showsVerticalScrollIndicator: false,
         stickyHeaderIndices: [0],
+        // scrollEnabled: true,
+        // panGestureEnabled: true,
+        nestedScrollEnabled: true,
       }}
     >
       {renderContent()}
