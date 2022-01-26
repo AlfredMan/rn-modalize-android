@@ -34,10 +34,10 @@ export const AlwaysOpen = () => {
   const renderContent = () => [
     <View style={s.content__header} key="0">
       <Text onPress={() => handleOpen("top")} style={s.content__heading}>
-        BAO Borough
+        Test Header
       </Text>
       <Text onPress={() => handleOpen("top")} style={s.content__subheading}>
-        3 rewards available
+        Test Subheader
       </Text>
     </View>,
 
@@ -55,10 +55,11 @@ export const AlwaysOpen = () => {
       />
       <Button name="Close completely" onPress={handleClose} />
 
-      <Text style={{ ...s.content__description, ...tw`text-red-700` }}>
-        {/* {faker.lorem.paragraphs(8)} */}
-        123 12381273891273 siouadfhajksdhf kjhjkas dfhjkasdh fjka
-      </Text>
+      {Array(40)
+        .fill(0)
+        .map((k,i) => (
+          <Text key={i}>test{i}</Text>
+        ))}
 
       {/* <ScrollView style={s.content__scrollview} horizontal>
         {Array(5)
